@@ -203,13 +203,13 @@ body::before {
   background-color: var(--gui-window-control-close-active-color);
 }
 .gui-window-control-minimize {
-  background-image: url("../images/icons/win-control-icon-minimize-optimized.svg");
+  background-image: url("../images/ui-icons/win-control-icon-minimize-optimized.svg");
 }
 .gui-window-control-maximize {
-  background-image: url("../images/icons/win-control-icon-maximize-optimized.svg");
+  background-image: url("../images/ui-icons/win-control-icon-maximize-optimized.svg");
 }
 .gui-window-control-close {
-  background-image: url("../images/icons/win-control-icon-close-optimized.svg");
+  background-image: url("../images/ui-icons/win-control-icon-close-optimized.svg");
 }
 
 .gui-window-contents {
