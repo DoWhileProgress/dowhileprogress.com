@@ -220,6 +220,21 @@ body::before {
   font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
+
+  @media (max-width: 640px), (max-height: 420px) {
+    width: 40ch;
+    height: 15lh;
+    min-height: 246px;
+  }
+
+  @media (max-width: 360px) {
+    width: 38ch;
+  }
+
+  @media (max-height: 320px) {
+    height: 10lh;
+    min-height: 164px;
+  }
 }
 .gui-app-code-editor code,
 .gui-app-code-editor p,
@@ -278,7 +293,7 @@ body::before {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 50px;
+  padding: 8%;
   background-image: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
 
   animation: fade-in;
