@@ -227,18 +227,23 @@ body::before {
   font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
-
-  @media (max-width: 640px), (max-height: 420px) {
+}
+@media (max-width: 640px), (max-height: 420px) {
+  .gui-app-code-editor {
     width: 40ch;
     height: 15lh;
     min-height: 246px;
   }
+}
 
-  @media (max-width: 360px) {
+@media (max-width: 360px) {
+  .gui-app-code-editor {
     width: 38ch;
   }
+}
 
-  @media (max-height: 320px) {
+@media (max-height: 320px) {
+  .gui-app-code-editor {
     height: 10lh;
     min-height: 164px;
   }
