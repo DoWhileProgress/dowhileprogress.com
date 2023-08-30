@@ -19,6 +19,7 @@
   --gui-window-control-close-active-color: #c83c31;
   --code-editor-background-color: #000000f2;
   --code-editor-text-color: var(--gray-lightest);
+  --code-editor-cursor-color: var(--gray);
 
   /**
    * Fonts
@@ -61,20 +62,31 @@
     transform: scale(0.8);
     opacity: 0;
   }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
   }
+}
 
-  to {
-    opacity: 1;
+@keyframes typing {
+  from {
+    width: 0;
+    border-right-width: 0;
+  }
+
+  0.01% {
+    width: 0;
+    border-right-width: 1ch;
+  }
+
+  99.99% {
+    border-right-width: 1ch;
+  }
+
+  100% {
+    border-right-width: 0;
   }
 }
 
@@ -198,18 +210,62 @@ body::before {
 }
 
 .gui-app-code-editor {
-  width: 600px;
-  height: 400px;
+  width: 80ch;
+  height: 20lh;
+  min-width: 100%;
+  min-height: 328px;
   background-color: var(--code-editor-background-color);
   color: var(--code-editor-text-color);
   font-family: var(--font-code);
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .gui-app-code-editor code,
+.gui-app-code-editor p,
 .gui-app-code-editor pre {
   margin: 0;
   padding: 0;
   font-family: inherit;
+}
+.gui-app-code-editor p {
+  width: fit-content;
+  overflow: hidden;
+  border-right: 1ch solid var(--code-editor-cursor-color);
+
+  animation-name: typing;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.gui-app-code-editor p:nth-of-type(1) {
+  width: 4ch;
+  animation-timing-function: steps(4);
+  animation-delay: 1250ms;
+  animation-duration: 250ms;
+}
+.gui-app-code-editor p:nth-of-type(2) {
+  width: 12ch;
+  animation-timing-function: steps(12);
+  animation-delay: 1500ms;
+  animation-duration: 600ms;
+}
+.gui-app-code-editor p:nth-of-type(3) {
+  width: 13ch;
+  animation-timing-function: steps(13);
+  animation-delay: 2100ms;
+  animation-duration: 750ms;
+}
+.gui-app-code-editor p:nth-of-type(4) {
+  width: 11ch;
+  animation-timing-function: steps(11);
+  animation-delay: 2850ms;
+  animation-duration: 550ms;
+}
+.gui-app-code-editor p:nth-of-type(5) {
+  width: 19ch;
+  animation-timing-function: steps(19);
+  animation-delay: 3400ms;
+  animation-duration: 1000ms;
 }
 
 .gui-app-logo {
@@ -226,12 +282,11 @@ body::before {
   background-image: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
 
   animation: fade-in;
-  animation-delay: 1.5s;
+  animation-delay: 6s;
   animation-duration: var(--animation-speed-normal);
   animation-timing-function: var(--animation-timing-function-natural);
   animation-fill-mode: both;
   animation-direction: alternate;
-  animation-play-state: paused; /* TODO: Remove */
 }
 .gui-app-logo .word-mark {
   max-width: 100%;
