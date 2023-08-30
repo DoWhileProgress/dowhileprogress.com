@@ -1,0 +1,136 @@
+:root {
+  /**
+   * Color scheme
+   */
+  --gray-lightest: #f2f2f2;
+  --gray: #999;
+  --gray-darkest: #1a1a1a;
+  --black: #000;
+
+  --background-color: var(--gray);
+  --gui-window-box-shadow: 0 0 32px 0px #00000044;
+  --gui-title-bar-color: #f2f2f2;
+  --gui-window-control-hover-color: #e9e9e9;
+  --gui-window-control-active-color: #ededed;
+  --gui-window-control-close-hover-color: #c42b1c;
+  --gui-window-control-close-active-color: #c83c31;
+  --code-editor-background-color: var(--black);
+  --code-editor-text-color: var(--gray-lightest);
+
+  /**
+   * Fonts
+   */
+  --font-gui: ui, "Segoe UI", -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-code: "Source Code Pro", ui-monospace, Consolas, SFMono-Regular,
+    "SF Mono", Menlo, "Liberation Mono", monospace;
+}
+
+html {
+  /* Browser-normalizations */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  background-color: var(--background-color);
+}
+
+.gui-window {
+  margin: 0;
+  padding: 0;
+  place-self: center center;
+  border: 1px solid #2c2c2c;
+  border-radius: 8px;
+  box-shadow: var(--gui-window-box-shadow);
+  font-family: var(--font-gui);
+  overflow: hidden;
+}
+.gui-title-bar {
+  display: grid;
+  grid-template-columns: max-content auto min-content;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: stretch;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--gui-title-bar-color);
+  user-select: none;
+}
+.gui-window-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline: 14px;
+  background-image: url("../images/dowhileprogress-pictorial-mark.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.gui-window-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+.gui-window-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.gui-window-control {
+  display: block;
+  width: 46px;
+  height: 100%;
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.gui-window-control:hover {
+  background-color: var(--gui-window-control-hover-color);
+}
+.gui-window-control-close:hover {
+  background-color: var(--gui-window-control-close-hover-color);
+}
+.gui-window-control:active {
+  background-color: var(--gui-window-control-active-color);
+}
+.gui-window-control-close:active {
+  background-color: var(--gui-window-control-close-active-color);
+}
+.gui-window-control-minimize {
+  background-image: url("../images/icons/win-control-icon-minimize.svg");
+}
+.gui-window-control-maximize {
+  background-image: url("../images/icons/win-control-icon-maximize.svg");
+}
+.gui-window-control-close {
+  background-image: url("../images/icons/win-control-icon-close.svg");
+}
+
+.gui-app-code-editor {
+  width: 600px;
+  height: 400px;
+  background-color: var(--code-editor-background-color);
+  color: var(--code-editor-text-color);
+  font-family: var(--font-code);
+  font-size: 13px;
+}
+.gui-app-code-editor code,
+.gui-app-code-editor pre {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
