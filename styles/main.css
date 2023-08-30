@@ -90,6 +90,12 @@
   }
 }
 
+@media (prefers-reduced-motion) {
+  * {
+    animation-duration: 0s !important;
+  }
+}
+
 html {
   /* Browser-normalizations */
   -webkit-tap-highlight-color: transparent;
