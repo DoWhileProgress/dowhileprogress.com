@@ -9,6 +9,8 @@
   --black: #000;
 
   --background-color: var(--gray-dark);
+  --text-color: var(--black);
+  --gui-text-color: var(--black);
   --gui-window-box-shadow: 0 0 32px 0px #00000044;
   --gui-title-bar-color: #f2f2f2;
   --gui-window-control-hover-color: #e9e9e9;
@@ -21,6 +23,17 @@
   /**
    * Fonts
    */
+  --font-normal: "Roboto Condensed", -apple-system-condensed,
+    SanFranciscoCondensed-Regular, SanFranciscoCondensed,
+    "San Francisco Condensed", AvenirNextCondensed-Regular, AvenirNextCondensed,
+    "Avenir Next Condensed", HelveticaNueueCondensed-Regular,
+    HelveticaNueueCondensed, "Helvetica Neue Condensed",
+    HelveticaCondensed-Regular, HelveticaCondensed, "Helvetica Condensed",
+    sans-serif-condensed, -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", "Segoe UI", Helvetica, "Arial Condensed", Arial,
+    sans-serif;
+  --font-title: Roboto, ui, "Segoe UI", -apple-system, BlinkMacSystemFont,
+    "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-gui: ui, "Segoe UI", -apple-system, BlinkMacSystemFont, "San Francisco",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: "Source Code Pro", ui-monospace, Consolas, SFMono-Regular,
@@ -55,23 +68,33 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 html {
   /* Browser-normalizations */
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  display: grid;
+  grid-template-rows: 1fr min-content;
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-body {
-  display: grid;
   background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-normal);
 }
 
 body::before {
@@ -81,12 +104,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
   background: var(--background-noise);
   opacity: 0.5;
 }
 
 .gui-window {
-  position: relative;
   margin: 0;
   padding: 0;
   place-self: center center;
@@ -94,7 +117,9 @@ body::before {
   border-radius: 8px;
   box-shadow: var(--gui-window-box-shadow);
   font-family: var(--font-gui);
+  color: var(--gui-text-color);
   overflow: hidden;
+  user-select: none;
 
   animation: win-open;
   animation-delay: 0.5s;
@@ -168,6 +193,10 @@ body::before {
   background-image: url("../images/icons/win-control-icon-close.svg");
 }
 
+.gui-window-contents {
+  position: relative;
+}
+
 .gui-app-code-editor {
   width: 600px;
   height: 400px;
@@ -181,4 +210,39 @@ body::before {
   margin: 0;
   padding: 0;
   font-family: inherit;
+}
+
+.gui-app-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 50px;
+  background-image: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
+
+  animation: fade-in;
+  animation-delay: 1.5s;
+  animation-duration: var(--animation-speed-normal);
+  animation-timing-function: var(--animation-timing-function-natural);
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-play-state: paused; /* TODO: Remove */
+}
+.gui-app-logo .word-mark {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #ffffff44);
+}
+
+footer {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 300;
 }
