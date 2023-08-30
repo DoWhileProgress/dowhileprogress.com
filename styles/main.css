@@ -54,6 +54,7 @@
    * Animations
    */
   --animation-speed-normal: 100ms;
+  --animation-speed-slow: 250ms;
   --animation-timing-function-natural: ease-out;
 }
 
@@ -304,7 +305,7 @@ body::before {
 
   animation: fade-in;
   animation-delay: 6s;
-  animation-duration: var(--animation-speed-normal);
+  animation-duration: var(--animation-speed-slow);
   animation-timing-function: var(--animation-timing-function-natural);
   animation-fill-mode: both;
   animation-direction: alternate;
