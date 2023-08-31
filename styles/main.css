@@ -33,10 +33,10 @@
     sans-serif-condensed, -apple-system, BlinkMacSystemFont, "San Francisco",
     "Helvetica Neue", "Segoe UI", Helvetica, "Arial Condensed", Arial,
     sans-serif;
-  --font-title: Roboto, ui, "Segoe UI", -apple-system, BlinkMacSystemFont,
+  --font-title: Roboto, system-ui, "Segoe UI", -apple-system, BlinkMacSystemFont,
     "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-gui: ui, "Segoe UI", -apple-system, BlinkMacSystemFont, "San Francisco",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-gui: system-ui, "Segoe UI", -apple-system, BlinkMacSystemFont,
+    "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: "Source Code Pro", ui-monospace, Consolas, SFMono-Regular,
     "SF Mono", Menlo, "Liberation Mono", monospace;
 
