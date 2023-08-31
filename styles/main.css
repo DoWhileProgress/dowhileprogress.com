@@ -146,7 +146,6 @@ body::before {
   animation-duration: var(--animation-speed-normal);
   animation-timing-function: var(--animation-timing-function-natural);
   animation-fill-mode: both;
-  animation-direction: alternate;
 }
 .gui-title-bar {
   display: grid;
@@ -164,7 +163,7 @@ body::before {
   width: 16px;
   height: 16px;
   margin-inline: 14px;
-  background-image: url("../images/dowhileprogress-icon-squircle.svg");
+  background-image: url("../images/app-icons/icon.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -263,7 +262,6 @@ body::before {
 
   animation-name: typing;
   animation-fill-mode: both;
-  animation-direction: alternate;
 }
 .gui-app-code-editor p:nth-of-type(1) {
   width: 4ch;
@@ -314,7 +312,6 @@ body::before {
   animation-duration: var(--animation-speed-slow);
   animation-timing-function: var(--animation-timing-function-natural);
   animation-fill-mode: both;
-  animation-direction: alternate;
 }
 .gui-app-logo .word-mark {
   max-width: 100%;
