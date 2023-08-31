@@ -44,6 +44,7 @@
    * Images
    */
   --image-transparent-noise: url("../images/noise.png");
+  --dwp-brand-gradient: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
 
   /**
    * Shared Composites
@@ -163,7 +164,7 @@ body::before {
   width: 16px;
   height: 16px;
   margin-inline: 14px;
-  background-image: url("../images/dowhileprogress-pictorial-mark.svg");
+  background-image: url("../images/dowhileprogress-icon-squircle.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -306,7 +307,7 @@ body::before {
   align-items: center;
   flex-wrap: nowrap;
   padding: 8%;
-  background-image: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
+  background-image: var(--dwp-brand-gradient);
 
   animation: fade-in;
   animation-delay: 6s;
