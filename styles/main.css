@@ -210,6 +210,13 @@ body::before {
 .gui-window-control-close:hover {
   background-color: var(--gui-window-control-close-hover-color);
 }
+@media (hover: none) {
+  /* Reset normal hover effects, so mobile doesn't try and show them */
+  .gui-window-control:hover,
+  .gui-window-control-close:hover {
+    background-color: revert;
+  }
+}
 .gui-window-control:active {
   background-color: var(--gui-window-control-active-color);
 }
