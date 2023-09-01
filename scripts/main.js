@@ -4,6 +4,7 @@
   console.log('do { } while (progress);');
 
   const guiWindowElement = document.querySelector('.gui-window');
+  const guiWindowIconElement = document.querySelector('.gui-window-icon');
   const guiWindowMinimizeElement = document.querySelector('.gui-window-control-minimize');
   const guiWindowMaximizeElement = document.querySelector('.gui-window-control-maximize');
   const guiWindowCloseElement = document.querySelector('.gui-window-control-close');
@@ -23,11 +24,15 @@
     }
   };
 
+  guiWindowIconElement.addEventListener('dblclick', () => {
+    recursivelyRestartAnimations(guiWindowElement);
+  });
+
   guiWindowMinimizeElement.addEventListener('click', () => {
     guiWindowElement.classList.add('minimized');
     guiWindowElement.addEventListener('transitionend', () => {
       guiWindowElement.classList.remove('minimized');
-    });
+    }, { once: true });
   });
 
   guiWindowMaximizeElement.addEventListener('click', () => {
