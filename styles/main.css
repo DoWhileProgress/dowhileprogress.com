@@ -141,7 +141,7 @@ body::before {
   overflow: hidden;
   user-select: none;
 
-  animation: win-open;
+  animation-name: win-open;
   animation-delay: 0.5s;
   animation-duration: var(--animation-speed-normal);
   animation-timing-function: var(--animation-timing-function-natural);
@@ -307,7 +307,7 @@ body::before {
   padding: 8%;
   background-image: var(--dwp-brand-gradient);
 
-  animation: fade-in;
+  animation-name: fade-in;
   animation-delay: 6s;
   animation-duration: var(--animation-speed-slow);
   animation-timing-function: var(--animation-timing-function-natural);
