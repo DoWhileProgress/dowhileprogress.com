@@ -24,7 +24,10 @@
   };
 
   guiWindowMinimizeElement.addEventListener('click', () => {
-    console.log('minimize window');
+    guiWindowElement.classList.add('minimized');
+    guiWindowElement.addEventListener('transitionend', () => {
+      guiWindowElement.classList.remove('minimized');
+    });
   });
 
   guiWindowMaximizeElement.addEventListener('click', () => {

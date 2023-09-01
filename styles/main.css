@@ -55,8 +55,9 @@
    * Animations
    */
   --animation-speed-normal: 100ms;
+  --animation-speed-gradual: 175ms;
   --animation-speed-slow: 250ms;
-  --animation-timing-function-natural: ease-out;
+  --animation-timing-function-ui: cubic-bezier(1, 0, 0, 1);
 }
 
 @keyframes win-open {
@@ -149,16 +150,20 @@ body::before {
   animation-name: win-open;
   animation-delay: 0.5s;
   animation-duration: var(--animation-speed-normal);
-  animation-timing-function: var(--animation-timing-function-natural);
-  animation-fill-mode: both;
+  animation-timing-function: var(--animation-timing-function-ui);
+  animation-fill-mode: backwards;
 
-  transition-property: min-width, min-height;
-  transition-duration: var(--animation-speed-slow);
-  transition-timing-function: var(--animation-timing-function-natural);
+  transition-property: min-width, min-height, transform;
+  transition-duration: var(--animation-speed-gradual);
+  transition-timing-function: var(--animation-timing-function-ui);
 }
 .gui-window.maximized {
   min-width: 100%;
   min-height: 100%;
+}
+.gui-window.minimized {
+  transform: translateY(100%) scale(0);
+  transition-duration: var(--animation-speed-slow);
 }
 
 .gui-title-bar {
@@ -345,8 +350,8 @@ body::before {
   animation-name: fade-in;
   animation-delay: 6s;
   animation-duration: var(--animation-speed-slow);
-  animation-timing-function: var(--animation-timing-function-natural);
-  animation-fill-mode: both;
+  animation-timing-function: var(--animation-timing-function-ui);
+  animation-fill-mode: backwards;
 }
 .gui-app-logo .word-mark {
   max-width: 100%;
