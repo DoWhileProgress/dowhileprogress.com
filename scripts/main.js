@@ -28,7 +28,7 @@
   });
 
   guiWindowMaximizeElement.addEventListener('click', () => {
-    console.log('maximize window');
+    guiWindowElement.classList.toggle('maximized');
   });
 
   guiWindowCloseElement.addEventListener('click', () => {
