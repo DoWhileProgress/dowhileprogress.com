@@ -162,7 +162,13 @@ body::before {
   min-height: 100%;
 }
 .gui-window.minimized {
-  transform: translateY(100%) scale(0);
+  transform: translateY(
+      calc(
+        var(--document-height) -
+          calc(var(--gui-window-top) + var(--gui-window-height) / 2)
+      )
+    )
+    scale(0);
   transition-duration: var(--animation-speed-slow);
 }
 
