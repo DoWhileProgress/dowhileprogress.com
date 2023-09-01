@@ -5,7 +5,9 @@
 
   const documentElement = document.documentElement;
   const guiWindowElement = document.querySelector('.gui-window');
+  const guiWindowTitleBarElement = document.querySelector('.gui-title-bar');
   const guiWindowIconElement = document.querySelector('.gui-window-icon');
+  const guiWindowControlsElement = document.querySelector('.gui-window-controls');
   const guiWindowMinimizeElement = document.querySelector('.gui-window-control-minimize');
   const guiWindowMaximizeElement = document.querySelector('.gui-window-control-maximize');
   const guiWindowCloseElement = document.querySelector('.gui-window-control-close');
@@ -48,22 +50,35 @@
   markCriticalDimensions();
   window.addEventListener('resize', debounce(markCriticalDimensions));
 
-  guiWindowIconElement.addEventListener('dblclick', () => {
+  guiWindowIconElement.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
     recursivelyRestartAnimations(guiWindowElement);
   });
 
-  guiWindowMinimizeElement.addEventListener('click', () => {
+  guiWindowTitleBarElement.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    guiWindowElement.classList.toggle('maximized');
+  });
+
+  guiWindowControlsElement.addEventListener('dblclick', (e) =>
+    e.stopPropagation()
+  );
+
+  guiWindowMinimizeElement.addEventListener('click', (e) => {
+    e.stopPropagation();
     guiWindowElement.classList.add('minimized');
     guiWindowElement.addEventListener('transitionend', () => {
       guiWindowElement.classList.remove('minimized');
     }, { once: true });
   });
 
-  guiWindowMaximizeElement.addEventListener('click', () => {
+  guiWindowMaximizeElement.addEventListener('click', (e) => {
+    e.stopPropagation();
     guiWindowElement.classList.toggle('maximized');
   });
 
-  guiWindowCloseElement.addEventListener('click', () => {
+  guiWindowCloseElement.addEventListener('click', (e) => {
+    e.stopPropagation();
     recursivelyRestartAnimations(guiWindowElement);
   });
 
