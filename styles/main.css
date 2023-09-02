@@ -57,6 +57,7 @@
   --animation-speed-normal: 100ms;
   --animation-speed-gradual: 175ms;
   --animation-speed-slow: 250ms;
+  --animation-speed-slower: 500ms;
   --animation-timing-function-ui: cubic-bezier(1, 0, 0, 1);
 }
 
@@ -358,8 +359,8 @@ body::before {
 
   animation-name: fade-in;
   animation-delay: 6s;
-  animation-duration: var(--animation-speed-slow);
-  animation-timing-function: var(--animation-timing-function-ui);
+  animation-duration: var(--animation-speed-slower);
+  animation-timing-function: ease-out;
   animation-fill-mode: backwards;
 }
 .gui-app-logo .word-mark {
@@ -377,6 +378,17 @@ body::before {
 }
 .gui-app-logo .slogan span {
   display: inline-block;
+
+  animation-name: fade-in;
+  animation-duration: var(--animation-speed-slower);
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+.gui-app-logo .slogan span:nth-of-type(1) {
+  animation-delay: 7s;
+}
+.gui-app-logo .slogan span:nth-of-type(2) {
+  animation-delay: 8s;
 }
 @media (max-width: 640px), (max-height: 420px) {
   .gui-app-logo {
