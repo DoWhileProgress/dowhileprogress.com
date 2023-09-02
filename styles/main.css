@@ -348,11 +348,12 @@ body::before {
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: grid;
+  grid-template-rows: minmax(0, 100%) 1fr;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 8%;
+  padding: 4%;
   background-image: var(--dwp-brand-gradient);
 
   animation-name: fade-in;
@@ -366,6 +367,33 @@ body::before {
   max-height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 0 10px #ffffff44);
+}
+.gui-app-logo .slogan {
+  margin: 1em auto;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 18px;
+  filter: drop-shadow(0 0 10px #ffffff44);
+}
+.gui-app-logo .slogan span {
+  display: inline-block;
+}
+@media (max-width: 640px), (max-height: 420px) {
+  .gui-app-logo {
+    padding: 8%;
+  }
+  .gui-app-logo .slogan {
+    font-size: 14px;
+  }
+}
+@media (max-height: 340px) {
+  .gui-app-logo {
+    padding: 4%;
+  }
+  .gui-app-logo .slogan {
+    font-size: 12px;
+    max-width: 75%;
+  }
 }
 
 footer {
