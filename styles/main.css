@@ -43,7 +43,7 @@
   /**
    * Images
    */
-  --image-transparent-noise: url("../images/noise.png");
+  --image-transparent-noise: url("/images/noise.png");
   --dwp-brand-gradient: linear-gradient(135deg, #c080c0 0%, #80c0c0 100%);
 
   /**
@@ -191,7 +191,7 @@ body::before {
   width: 16px;
   height: 16px;
   margin-inline: 14px;
-  background-image: url("../images/app-icons/icon.svg");
+  background-image: url("/images/app-icons/icon.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -238,16 +238,16 @@ body::before {
   background-color: var(--gui-window-control-close-active-color);
 }
 .gui-window-control-minimize {
-  background-image: url("../images/ui-icons/win-control-icon-minimize-optimized.svg");
+  background-image: url("/images/ui-icons/win-control-icon-minimize-optimized.svg");
 }
 .gui-window-control-maximize {
-  background-image: url("../images/ui-icons/win-control-icon-maximize-optimized.svg");
+  background-image: url("/images/ui-icons/win-control-icon-maximize-optimized.svg");
 }
 .maximized .gui-window-control-maximize {
-  background-image: url("../images/ui-icons/win-control-icon-restore-optimized.svg");
+  background-image: url("/images/ui-icons/win-control-icon-restore-optimized.svg");
 }
 .gui-window-control-close {
-  background-image: url("../images/ui-icons/win-control-icon-close-optimized.svg");
+  background-image: url("/images/ui-icons/win-control-icon-close-optimized.svg");
 }
 
 .gui-window-contents {
